@@ -41,21 +41,26 @@ const App = () => {
 
 const styles = StyleSheet.create({
   body: {
-    flex: 1,
-    backgroundColor: 'red',
-    text: 'white',
+    width: '100%',
+    height: '50%',
+    backgroundColor: 'yellow',
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 10,
+    borderColor:'red',
+    borderRadius: 20,
+
   },
   text: {
-    color: 'white',
+    color: 'black',
     fontSize: 20,
     fontStyle: 'italic',
     margin: 10,
+    textTransform: 'uppercase',
   },
   button : {
-    marginTop:10,
-    marginBottom : 20,
+    width:10,
+    height:20,
   },
 });
 

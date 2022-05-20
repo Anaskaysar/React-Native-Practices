@@ -10,58 +10,62 @@
 import React,{useState} from 'react';
 //import type {Node} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  Button,
-  Linking,
   View,
+  ScrollView,
 } from 'react-native';
 
 const App = () => {
-  const [name,setName] = useState('Kaysar');
-  const [session,setSession] = useState({number:6,title:'State'});
-
-  const onClickhandler = ()=>{
-    setName('Programming By kaysar');
-    setSession({number:7,title:'Style'});
-  };
-
+  const [Items, setItems]= useState([
+    {key:1, item: 'Item 1'},
+    {key:2, item: 'Item 2'},
+    {key:3, item: 'Item 3'},
+    {key:4, item: 'Item 4'},
+    {key:5, item: 'Item 5'},
+    {key:6, item: 'Item 6'},
+    {key:7, item: 'Item 7'},
+    {key:9, item: 'Item 8'},
+    {key:10, item: 'Item 8'},
+    {key:11, item: 'Item 8'},
+    {key:12, item: 'Item 8'},
+  ]);
   return (
     <View style={styles.body}>
-      <Text style={styles.text}>{name}</Text>
-      <Text style={styles.text}>This is session number {session.number} and about {session.title}</Text>
-      {/* <Button style={styles.button} title="YoutubeChannel" onPress={()=>{Linking.openURL('https://www.youtube.com/channel/UC7pqe_6PQgKUblulGqGFN8g');}} /> */}
-      <Button title="Update State" onPress={onClickhandler} />
+      <ScrollView>
+        {
+          Items.map((object)=>{
+            return (
+              <View style={styles.item} key={object.key}>
+                <Text style={styles.text}>{object.item}</Text>
+              </View>
+            );
+          })
+        }
+      </ScrollView>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   body: {
-    width: '100%',
-    height: '50%',
-    backgroundColor: 'yellow',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 10,
-    borderColor:'red',
-    borderRadius: 20,
-
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#ffffff',
+    alignItems: 'stretch',
+    justifyContent: 'flex-start',
   },
   text: {
-    color: 'black',
-    fontSize: 20,
-    fontStyle: 'italic',
+    color: '#000000',
+    fontSize: 35,
     margin: 10,
-    textTransform: 'uppercase',
   },
-  button : {
-    width:10,
-    height:20,
-  },
+  item :{
+    margin:10,
+    backgroundColor:'#4ae1fa',
+    justifyContent:'center',
+    alignItems: 'center',
+   },
 });
 
 export default App;

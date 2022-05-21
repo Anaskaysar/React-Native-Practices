@@ -5,7 +5,7 @@ export const Button = ({title}) => {
   return(
     <Pressable 
     style={{backgroundColor: 'black', padding: 10, alignItems: 'center', marginTop:10}}
-    onPress={()=>{alert("pressed")}}
+    onPress={()=>alert("Pressed")}
     >
       <Text style={{color: 'white'}}>{title}</Text>
     </Pressable>
@@ -17,7 +17,7 @@ export default function App() {
     <SafeAreaView>
       <ScrollView>
         <View style={{height:60, backgroundColor: "blue"}}>
-          <Text style={{color: 'white', padding:20}}> Hello Guys Chaee Pee Loo </Text>
+          <Text>Hello Guys Chaee Pee Loo</Text>
         </View>
 
         <View style={{height:60, backgroundColor: "green"}}>
